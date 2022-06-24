@@ -1,9 +1,6 @@
 package week2_ClosestPair;
 
-
-import java.text.DecimalFormat;
-
-import static week2_ClosestPair.ClosestPair.closest;
+import static week2_ClosestPair.ClosestPair.closestHelper;
 
 class Point{
     public int x;
@@ -26,9 +23,9 @@ public class Main {
                 new Point(3, 4)
 
         };
-
-        DecimalFormat df = new DecimalFormat("#.######");
-        System.out.println("The smallest distance is " + closest(P,P.length));
+         float ans = closestHelper(P,P.length);
+         System.out.print("The smallest distance is ");
+         System.out.println(String.format("%.4f",ans));
     }
 }
 

@@ -64,7 +64,7 @@ public class ClosestPair {
         return Math.min(d, stripClosest(strip, j, d));
     }
 
-    public static float closest(Point[] P, int n) {
+    public static float closestHelper(Point[] P, int n) {
         Arrays.sort(P, 0, n, new PointXComparator());
         return closestUtil(P, 0, n);
     }
