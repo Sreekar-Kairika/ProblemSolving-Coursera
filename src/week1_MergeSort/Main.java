@@ -6,8 +6,6 @@ public class Main {
 
     public static void main(String[] args){
 
-//        int arr[] = { 3, 5, 6, 1, 9, 2, 7,8};
-
         //User Input
         int n;
         Scanner sc = new Scanner(System.in);
@@ -22,14 +20,15 @@ public class Main {
         }
 
         MergeSortAlgo ob = new MergeSortAlgo();
-        PrintArray print = new PrintArray();
+
         System.out.println("Before sorting the array:");
-        print.printArray(arr);
+        ob.printArray(arr);
 
         ob.mergeSort(arr, 0, arr.length-1);
 
         System.out.println("Sorted array:");
-        print.printArray(arr);
+        ob.printArray(arr);
+
 
 
 
