@@ -56,20 +56,14 @@ public class ConnectedComponents {
             }
 
             addedge(adj,0,1);
-
             addedge(adj,1,2);
-
             addedge(adj,3,4);
-
             addedge(adj,5,6);
 
             System.out.println("The Graph is : ");
             printGraph(adj);
 
-
-
-             int components =  DFS(adj,V,0);
-             System.out.println("The no of components "+ components);
+            int components =  DFS(adj,V,0);
+            System.out.println("The no of components "+ components);
         }
-
 }
