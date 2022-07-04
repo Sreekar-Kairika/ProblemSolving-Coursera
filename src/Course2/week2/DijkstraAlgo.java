@@ -6,7 +6,7 @@ import static java.lang.Integer.min;
 public class DijkstraAlgo {
 
 
-     public static int[] Dijkstra(int graph[][], int src){
+     public static int[] shortestPath(int graph[][], int src){
 
         int v = graph.length;
         int[] dist = new int[v];
@@ -23,7 +23,6 @@ public class DijkstraAlgo {
                     u=i;
                 }
             }
-
             fin[u]=true;
             for(int i=0;i<v;i++){
                 if(!fin[i] && graph[u][i]!=0)
@@ -44,7 +43,7 @@ public class DijkstraAlgo {
 
         System.out.println("The Distance from Source Vertex to Other vertex is");
         int ans[];
-        ans=Dijkstra(graph,0);
+        ans=shortestPath(graph,0);
         for(int i:ans){
             System.out.print(i+" ");
         }
