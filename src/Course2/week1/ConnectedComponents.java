@@ -3,20 +3,17 @@ package Course2.week1;
 import java.util.ArrayList;
 
 public class ConnectedComponents {
-     static void DFSRec(ArrayList<ArrayList<Integer>> adj,int s,boolean[] visited){
+     static void connectedComponentUtil(ArrayList<ArrayList<Integer>> adj,int s,boolean[] visited){
 
             visited[s]=true;
-//            System.out.print(s+" ");
-
             for(int u:adj.get(s)){
                 if(visited[u] == false){
-                    DFSRec(adj,u,visited);
+                    connectedComponentUtil(adj,u,visited);
                 }
             }
         }
 
-        static int DFS(ArrayList<ArrayList<Integer>> adj,int V,int s){
-
+        static int connectedComponents(ArrayList<ArrayList<Integer>> adj,int V,int s){
             int countComponents = 0;
             boolean[] visited = new boolean[V];
 
@@ -25,7 +22,7 @@ public class ConnectedComponents {
 
             for(int i=0;i<V;i++){
                 if(visited[i]==false){
-                    DFSRec(adj,i,visited);
+                    connectedComponentUtil(adj,i,visited);
                     countComponents++;
                 }
             }
@@ -47,9 +44,9 @@ public class ConnectedComponents {
         }
 
         public static void main(String[] args){
-            int V=7;
 
-            ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>(V);
+            int V=7;
+            ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
 
             for(int i=0;i<V;i++){
                 adj.add(new ArrayList<Integer>());
@@ -63,7 +60,7 @@ public class ConnectedComponents {
             System.out.println("The Graph is : ");
             printGraph(adj);
 
-            int components =  DFS(adj,V,0);
+            int components =  connectedComponents(adj,V,0);
             System.out.println("The no of components "+ components);
         }
 }
